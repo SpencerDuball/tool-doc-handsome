@@ -13,6 +13,7 @@ const Routes = () => {
   return (
     <Router>
       <Route path="/" page={HomePage} name="home" />
+      {/* ⬇️ This is aboslutely required to load the homepage with Electron! */}
       <Route path="/index.html" page={HomePage} name="home" />
       <Route notfound page={NotFoundPage} />
     </Router>

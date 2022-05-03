@@ -7,6 +7,13 @@ const prodEntryFile = '/index.html'
 interface CreateWindowProps {
   env: string // 'dev' | 'prod'
 }
+
+/**
+ * Creates the main application window for us to interact with Electron.
+ *
+ * @param props
+ * @returns The window
+ */
 export const createWindow = (props: CreateWindowProps) => {
   // When true, on app launch it will focus this window in view.
   // Turn this off when developing in order to maintain focus on your IDE.
