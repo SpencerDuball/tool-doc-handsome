@@ -2,20 +2,24 @@
   "name": "electron",
   "version": "1.0.0",
   "description": "",
+  "config": {
+    "forge": "./forge.config.js"
+  },
   "main": "build/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "concurrently 'yarn watch' 'nodemon --exec yarn electron .'",
+    "dev": "cross-env NODE_ENV=dev concurrently 'yarn watch' 'nodemon --exec yarn electron .'",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "make": "electron-forge make"
   },
-  "nohoist": [
-    "electron"
-  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.63",
     "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
     "electron": "^18.2.0",
     "nodemon": "^2.0.16",
     "ts-node": "^10.7.0",
