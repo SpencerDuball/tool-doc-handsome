@@ -2977,6 +2977,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@electron-forge/maker-squirrel@npm:^6.0.0-beta.63":
+  version: 6.0.0-beta.63
+  resolution: "@electron-forge/maker-squirrel@npm:6.0.0-beta.63"
+  dependencies:
+    "@electron-forge/maker-base": 6.0.0-beta.63
+    "@electron-forge/shared-types": 6.0.0-beta.63
+    electron-winstaller: ^5.0.0
+    fs-extra: ^10.0.0
+  dependenciesMeta:
+    electron-winstaller:
+      optional: true
+  checksum: 1282aebef073b10f92fa76f575e13d6925e152cf3954e5e97e2ed458214376b72beb1b68a51053f82a2a7d90bb6e966be3b6489427001f1fa3b669ce89f38575
+  languageName: node
+  linkType: hard
+
 "@electron-forge/plugin-base@npm:6.0.0-beta.63":
   version: 6.0.0-beta.63
   resolution: "@electron-forge/plugin-base@npm:6.0.0-beta.63"
@@ -8831,6 +8846,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asar@npm:^2.0.1":
+  version: 2.1.0
+  resolution: "asar@npm:2.1.0"
+  dependencies:
+    "@types/glob": ^7.1.1
+    chromium-pickle-js: ^0.2.0
+    commander: ^2.20.0
+    cuint: ^0.2.2
+    glob: ^7.1.3
+    minimatch: ^3.0.4
+    mkdirp: ^0.5.1
+    tmp-promise: ^1.0.5
+  dependenciesMeta:
+    "@types/glob":
+      optional: true
+  bin:
+    asar: bin/asar.js
+  checksum: 8f169f291c929a3d2daf43a019e8fe13580e6509bc434e5efaea4fd1e3aa51df4a4b17c96001e4dd79adc80cbe25e2cdca427dff68f1da9cf18b2b216b3ba2db
+  languageName: node
+  linkType: hard
+
 "asar@npm:^3.1.0":
   version: 3.1.0
   resolution: "asar@npm:3.1.0"
@@ -11821,6 +11857,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cuint@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "cuint@npm:0.2.2"
+  checksum: ba56735799e04cd8fd8e386bfde52298e26179665f0063a7a22aaf5771e1b350f1b3baa83c719097cb650766b0e5067d16121db71f88fad4b2ef1ed423d646b7
+  languageName: node
+  linkType: hard
+
 "cyclist@npm:^1.0.1":
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
@@ -12682,6 +12725,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-winstaller@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "electron-winstaller@npm:5.0.0"
+  dependencies:
+    asar: ^2.0.1
+    debug: ^4.1.1
+    fs-extra: ^7.0.1
+    lodash.template: ^4.2.2
+    temp: ^0.9.0
+  checksum: f472a4749c4346cd886a27fe7a04cf0a859eed3fa12b262fe65ebad3036b88c0ae3b62897c6eaf67259b18bb1b0cebc27d9c78f3e678c7f5a23bbeba84068653
+  languageName: node
+  linkType: hard
+
 "electron@npm:^18.2.0":
   version: 18.2.0
   resolution: "electron@npm:18.2.0"
@@ -12701,6 +12757,7 @@ __metadata:
   dependencies:
     "@electron-forge/cli": ^6.0.0-beta.63
     "@electron-forge/maker-dmg": ^6.0.0-beta.63
+    "@electron-forge/maker-squirrel": ^6.0.0-beta.63
     concurrently: ^7.1.0
     cross-env: ^7.0.3
     electron: ^18.2.0
@@ -14751,7 +14808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^7.0.0":
+"fs-extra@npm:^7.0.0, fs-extra@npm:^7.0.1":
   version: 7.0.1
   resolution: "fs-extra@npm:7.0.1"
   dependencies:
@@ -18658,6 +18715,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash._reinterpolate@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "lodash._reinterpolate@npm:3.0.0"
+  checksum: cdf592374b5e9eb6d6290a9a07c7d90f6e632cca4949da2a26ae9897ab13f138f3294fd5e81de3e5d997717f6e26c06747a9ad3413c043fd36c0d87504d97da6
+  languageName: node
+  linkType: hard
+
 "lodash.chunk@npm:^4.2.0":
   version: 4.2.0
   resolution: "lodash.chunk@npm:4.2.0"
@@ -18809,6 +18873,25 @@ __metadata:
   version: 4.7.0
   resolution: "lodash.sortby@npm:4.7.0"
   checksum: fc48fb54ff7669f33bb32997cab9460757ee99fafaf72400b261c3e10fde21538e47d8cfcbe6a25a31bcb5b7b727c27d52626386fc2de24eb059a6d64a89cdf5
+  languageName: node
+  linkType: hard
+
+"lodash.template@npm:^4.2.2":
+  version: 4.5.0
+  resolution: "lodash.template@npm:4.5.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+    lodash.templatesettings: ^4.0.0
+  checksum: 62a02b397f72542fa9a989d9fc1a94fc1cb94ced8009fa5c37956746c0cf460279e844126c2abfbf7e235fe27e8b7ee8e6efbf6eac247a06aa05b05457fda817
+  languageName: node
+  linkType: hard
+
+"lodash.templatesettings@npm:^4.0.0":
+  version: 4.2.0
+  resolution: "lodash.templatesettings@npm:4.2.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+  checksum: 2609fea36ed061114dfed701666540efc978b069b2106cd819b415759ed281419893d40f85825240197f1a38a98e846f2452e2d31c6d5ccee1e006c9de820622
   languageName: node
   linkType: hard
 
@@ -23451,6 +23534,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:~2.6.2":
+  version: 2.6.3
+  resolution: "rimraf@npm:2.6.3"
+  dependencies:
+    glob: ^7.1.3
+  bin:
+    rimraf: ./bin.js
+  checksum: f1e646f8c567795f2916aef7aadf685b543da6b9a53e482bb04b07472c7eef2b476045ba1e29f401c301c66b630b22b815ab31fdd60c5e1ae6566ff523debf45
+  languageName: node
+  linkType: hard
+
 "ripemd160@npm:^2.0.0, ripemd160@npm:^2.0.1":
   version: 2.0.2
   resolution: "ripemd160@npm:2.0.2"
@@ -25194,6 +25288,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"temp@npm:^0.9.0":
+  version: 0.9.4
+  resolution: "temp@npm:0.9.4"
+  dependencies:
+    mkdirp: ^0.5.1
+    rimraf: ~2.6.2
+  checksum: 7a1cd75efa65b9ca97fc0dfa752673842d23fa41d9c641a447d86ca986eb7662f0d17771e1edf8d0149e76de3c6e7005faf2ccaa3baf64811c86d1d1a951dda7
+  languageName: node
+  linkType: hard
+
 "tempy@npm:1.0.1":
   version: 1.0.1
   resolution: "tempy@npm:1.0.1"
@@ -25429,6 +25533,25 @@ __metadata:
   dependencies:
     tslib: ^2.0.3
   checksum: face56f686060f777b43a180d371407124d201eb4238c19d9e97030fd54859696ca4e2ca499cc232f8700f24f2414cc08aab9fdf6d39acff055dd825a4d86d6a
+  languageName: node
+  linkType: hard
+
+"tmp-promise@npm:^1.0.5":
+  version: 1.1.0
+  resolution: "tmp-promise@npm:1.1.0"
+  dependencies:
+    bluebird: ^3.5.0
+    tmp: 0.1.0
+  checksum: 7ed0364640af762e121abbc4d645ea81bc406f6fca4fdf8b109c0d2181dfe8ffd8fdf79f0eea8a07c2d8a08890f020d3749c5d6db14a83df248203d8aea949ee
+  languageName: node
+  linkType: hard
+
+"tmp@npm:0.1.0":
+  version: 0.1.0
+  resolution: "tmp@npm:0.1.0"
+  dependencies:
+    rimraf: ^2.6.3
+  checksum: 195f96a194b34827b75e5742de09211ddd6d50b199c141e95cf399a574386031b4be03d2b6d33c3a0c364a3167affe3ece122bfe1b75485c8d5cf3f4320a8c48
   languageName: node
   linkType: hard
 

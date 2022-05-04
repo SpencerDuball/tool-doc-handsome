@@ -18,12 +18,13 @@ const PROTOCOL = 'file'
 export function interceptFileProtocol() {
   protocol.interceptFileProtocol(PROTOCOL, (request, callback) => {
     // remove the protocol: file:///index.html -> /index.html
-    const regex = new RegExp(`^${PROTOCOL}(://)?`)
+    const regex = new RegExp(`^${PROTOCOL}:?/*(C:)?/*`)
     let url = request.url.replace(regex, '')
 
     // complete the filesystem path: /index.html -> /the/path/to/our/index.html
     const rootDir = path.join(__dirname, '..')
     url = path.normalize(path.join(rootDir, WEB_FOLDER, url))
+    url = url.replace(/\\/, '/') // on windows file protocol still uses /
 
     callback({ path: url })
   })

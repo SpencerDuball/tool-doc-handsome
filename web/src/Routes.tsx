@@ -13,8 +13,10 @@ const Routes = () => {
   return (
     <Router>
       <Route path="/" page={HomePage} name="home" />
-      {/* ⬇️ This is aboslutely required to load the homepage with Electron! */}
+      {/* ⬇️ This is aboslutely required to load the homepage on macOS & Linux! */}
       <Route path="/index.html" page={HomePage} name="home" />
+      <Route path="/C:/index.html" page={HomePage} name="home" />
+      {/* ️⬆️ This is aboslutely required to load the homepage on Windows! */}
       <Route notfound page={NotFoundPage} />
     </Router>
   )

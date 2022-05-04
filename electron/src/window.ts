@@ -16,18 +16,13 @@ interface CreateWindowProps {
  * @returns The window
  */
 export const createWindow = (props: CreateWindowProps) => {
-  // When true, on app launch it will focus this window in view.
-  // Turn this off when developing in order to maintain focus on your IDE.
-  const show = props.env === 'dev' ? false : true
-  console.log(__dirname, 'preload.js')
-
   const win = new BrowserWindow({
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
     width: 1280,
     height: 900,
-    show,
+    show: false,
   })
 
   // load the frontend
@@ -37,6 +32,10 @@ export const createWindow = (props: CreateWindowProps) => {
   } else {
     interceptFileProtocol()
     win.loadFile(prodEntryFile)
+    win.on('ready-to-show', () => {
+      win.show()
+      win.focus()
+    })
   }
 
   return win
