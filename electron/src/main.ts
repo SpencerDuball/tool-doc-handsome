@@ -1,5 +1,6 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import { createWindow } from './window'
+import { handler as example } from './ipc/example'
 
 // const createWindow = () => {
 //   const win = new BrowserWindow({
@@ -15,6 +16,9 @@ import { createWindow } from './window'
 const env = process.env.NODE_ENV === undefined ? 'prod' : process.env.NODE_ENV
 
 app.whenReady().then(() => {
+  // register handlers
+  ipcMain.handle('/example', example)
+
   createWindow({ env })
 
   app.on('activate', () => {

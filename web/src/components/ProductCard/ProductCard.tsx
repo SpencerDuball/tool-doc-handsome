@@ -62,7 +62,15 @@ const ProductCard = (props: Props) => {
         </HStack>
       </Stack>
       <Stack align="center">
-        <Button colorScheme={colorScheme} isFullWidth>
+        <Button
+          colorScheme={colorScheme}
+          isFullWidth
+          onClick={async () =>
+            console.log(
+              await window.electronAPI.invoke('/example', { name: 'Spencer' })
+            )
+          }
+        >
           Add to cart
         </Button>
         <Link

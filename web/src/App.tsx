@@ -8,6 +8,12 @@ import Routes from 'src/Routes'
 
 import './index.css'
 
+declare global {
+  interface Window {
+    electronAPI: { invoke: (channel: string, ...args: any[]) => Promise<any> }
+  }
+}
+
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
