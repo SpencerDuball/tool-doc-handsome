@@ -4,6 +4,7 @@ import { format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { Box, Button, Text } from "@chakra-ui/react";
 import { useThemedColor } from "@dub-stack/chakra-radix-colors";
+import { useMDXComponent } from "next-contentlayer/hooks";
 
 export async function getStaticPaths() {
   const paths = allPosts.map((post) => post.url);
@@ -26,6 +27,7 @@ export const getStaticProps = async (props: { params: any }) => {
 
 const PostLayout = (props: { post: Post }) => {
   const c = useThemedColor();
+  const MDXContent = useMDXComponent(props.post.body.code);
   return (
     <>
       <Head>
@@ -59,10 +61,7 @@ const PostLayout = (props: { post: Post }) => {
             {format(parseISO(props.post.date), "LLLL d, yyyy")}
           </Text>
         </Box>
-        <Text
-          as="p"
-          dangerouslySetInnerHTML={{ __html: props.post.body.html }}
-        />
+        <MDXContent />
       </Box>
     </>
   );
