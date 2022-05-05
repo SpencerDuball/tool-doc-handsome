@@ -1,0 +1,15 @@
+{
+  "name": "tool-doc-handsome",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "packages/*"
+  ],
+  "version": "0.0.0",
+  "description": "A desktop app that combines tools, documentation, and search.",
+  "main": "index.js",
+  "repository": "git@github.com:SpencerDuball/tool-doc-handsome.git",
+  "author": "Spencer Duball <spencer@spencerduball.com>",
+  "license": "MIT"
+}
