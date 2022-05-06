@@ -22,7 +22,7 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </Text>
       <Box as="h2" fontSize="lg">
-        <NextLink href={post.url} passHref>
+        <NextLink href={post._raw.flattenedPath} passHref>
           <Button as="a" variant="link">
             {post.title}
           </Button>
