@@ -2,7 +2,6 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
 export const Tool = defineDocumentType(() => ({
   name: "Tool",
-  contentType: "mdx",
   filePathPattern: "pages/tools/*.mdx",
   fields: {
     title: {
