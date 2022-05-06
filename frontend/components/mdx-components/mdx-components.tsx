@@ -71,9 +71,7 @@ const H4 = (props: TextProps) => (
   />
 );
 
-const A = (props: ButtonProps) => (
-  <Button as="a" variant="link" colorScheme="red" {...props} />
-);
+const A = (props: ButtonProps) => <Button as="a" variant="link" {...props} />;
 
 const P = (props: TextProps) => (
   <Text
@@ -123,7 +121,7 @@ const Li = (props: ListItemProps) => <ListItem {...props} />;
 
 const Br = (props: BoxProps) => <Box as="br" height={6} {...props} />;
 
-const Table = (props: any) => <Table colorScheme="orange" {...props} />;
+const Table = (props: any) => <Table {...props} />;
 
 export const components = {
   h1: H1,
