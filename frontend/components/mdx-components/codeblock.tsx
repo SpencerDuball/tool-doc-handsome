@@ -120,6 +120,23 @@ function instanceOfReactElement(
   else return false;
 }
 
+/**
+ * Renders a code block with copy, theme colors, and scroll support. This is intended
+ * to be used primarily for .mdx code, but if you want to use it directly you must have
+ * children with the following properties to render as you want.
+ * @example
+ * <CodeBlock>
+ *   <code class="language-py">
+ *     a = 42
+ *     def myFunc():
+ *       abc = "123"
+ *   </code>
+ * </CodeBlock>
+ *
+ *
+ * @param props BoxProps
+ * @returns A CodeBlock
+ */
 const CodeBlock = (props: BoxProps) => {
   // if string, return w/o highlighting
   if (typeof props.children === "string")
@@ -148,7 +165,12 @@ const CodeBlock = (props: BoxProps) => {
   }
 
   return (
-    <CodeContainer w="full" position="relative" {...props}>
+    <CodeContainer
+      w="full"
+      position="relative"
+      className="component-code-block"
+      {...props}
+    >
       <CopyButton
         aria-label="Copy"
         position="absolute"
