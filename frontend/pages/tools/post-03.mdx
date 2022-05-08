@@ -3,43 +3,91 @@ title: Lorem Ipsum 3
 date: 2021-12-24
 ---
 
-import { Button, Box } from "@chakra-ui/react";
+import {
+  Button,
+  Box,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanels,
+  TabPanel,
+} from "@chakra-ui/react";
 
 <Button>Hello</Button>
 
-# Here is the first header
+<Tabs variant="enclosed">
+  <TabList>
+    <Tab>One</Tab>
+    <Tab>Two</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      # Here is the first header
 
-This is the first part
+      This is the first part
 
-## Here is a sub part
+      ## Here is a sub part
 
-Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum.
-Ipsum consequat enim id excepteur consequat nostrud esse esse fugiat dolore.
-Reprehenderit occaecat exercitation non cupidatat in eiusmod laborum ex eu
-fugiat aute culpa pariatur. Irure elit proident consequat veniam minim ipsum
-ex pariatur.
+      Ullamco et nostrud magna commodo nostrud occaecat quis pariatur id ipsum.
+      Ipsum consequat enim id excepteur consequat nostrud esse esse fugiat dolore.
+      Reprehenderit occaecat exercitation non cupidatat in eiusmod laborum ex eu
+      fugiat aute culpa pariatur. Irure elit proident consequat veniam minim ipsum
+      ex pariatur.
+    </TabPanel>
+    <TabPanel>
+      # Here is the second header
 
-# Here is the second header
+      This is the second part
 
-This is the second part
+      ## Here is another sub part
 
-## Here is another sub part
+      Mollit nisi cillum exercitation minim officia velit laborum non Lorem
+      adipisicing dolore. Labore commodo consectetur commodo velit adipisicing irure
+      dolore dolor reprehenderit aliquip. Reprehenderit cillum mollit eiusmod
+      excepteur elit ipsum aute pariatur in. Cupidatat ex culpa velit culpa ad non
+      labore exercitation irure laborum.
 
-Mollit nisi cillum exercitation minim officia velit laborum non Lorem
-adipisicing dolore. Labore commodo consectetur commodo velit adipisicing irure
-dolore dolor reprehenderit aliquip. Reprehenderit cillum mollit eiusmod
-excepteur elit ipsum aute pariatur in. Cupidatat ex culpa velit culpa ad non
-labore exercitation irure laborum.
+      > **This:** Is a blockquote?
+    </TabPanel>
 
-> **This:** Is a blockquote?
+  </TabPanels>
+</Tabs>
+
+<br />
 
 ---
 
+<br />
+
 `let x = 382;`
 
-```js
-var name = "World";
-console.warn("hello");
+```tsx
+import { extendTheme } from '@chakra-ui/react'
+
+const breakpoints = {
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+
+const theme = extendTheme({ breakpoints, ... })
+```
+
+```ada
+type Day_type   is range    1 ..   31;
+type Month_type is range    1 ..   12;
+type Year_type  is range 1800 .. 2100;
+type Hours is mod 24;
+type Weekday is (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday); jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+
+type Date is
+   record
+     Day   : Day_type;
+     Month : Month_type;
+     Year  : Year_type;
+   end record;
 ```
 
 # Here is the third header

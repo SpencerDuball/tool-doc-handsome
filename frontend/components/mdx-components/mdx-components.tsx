@@ -1,5 +1,4 @@
 import {
-  chakra,
   Box,
   BoxProps,
   Text,
@@ -18,8 +17,10 @@ import {
   Td,
   ListItemProps,
   ListItem,
+  Code,
+  CodeProps,
 } from "@chakra-ui/react";
-import { InlineCode } from "./inline-code";
+import CodeBlock from "./codeblock";
 
 const H1 = (props: TextProps) => {
   return (
@@ -119,6 +120,8 @@ const Ol = (props: ListProps) => (
 
 const Li = (props: ListItemProps) => <ListItem {...props} />;
 
+const StyledCode = (props: CodeProps) => <Code borderRadius="md" {...props} />;
+
 const Br = (props: BoxProps) => <Box as="br" height={6} {...props} />;
 
 const Table = (props: any) => <Table {...props} />;
@@ -135,10 +138,12 @@ export const components = {
   ul: Ul,
   ol: Ol,
   li: Li,
-  code: InlineCode,
+  code: StyledCode,
   kbd: Kbd,
+  pre: CodeBlock,
   br: Br,
   table: Table,
   th: Thead,
   td: Td,
+  // CodeBlock,
 };
