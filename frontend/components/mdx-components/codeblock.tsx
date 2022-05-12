@@ -173,6 +173,7 @@ const CodeBlock = (props: BoxProps) => {
       className="component-code-block"
       {...props}
     >
+      {/* @ts-ignore */}
       <LightMode>
         <CopyButton
           aria-label="Copy"
