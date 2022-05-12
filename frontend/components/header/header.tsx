@@ -10,7 +10,7 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { RiAncientGateFill, RiSunFill } from "react-icons/ri";
+import { RiAncientGateFill, RiSunFill, RiMoonFill } from "react-icons/ri";
 import Link from "next/link";
 import { useThemedColor } from "@dub-stack/chakra-radix-colors";
 
@@ -24,10 +24,11 @@ const LogoLink = (props: ButtonProps) => {
         color={c("_gray.12")}
         _active={{ color: c("_gray.12") }}
         _hover={{ textDecoration: "none" }}
+        className="component-header"
         {...props}
       >
         <HStack>
-          <Icon as={RiAncientGateFill} h={9} w={9} color={c("tomato.9")} />
+          <Icon as={RiAncientGateFill} h={9} w={9} color={c("violet.9")} />
           <Text as="p" fontWeight="bold">
             My App
           </Text>
@@ -38,28 +39,41 @@ const LogoLink = (props: ButtonProps) => {
 };
 
 export const Header = (props: BoxProps) => {
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
+  const c = useThemedColor();
   return (
-    <Box {...props}>
+    <Box
+      bg={c("_gray.1")}
+      zIndex="banner"
+      borderBottom="1px solid"
+      borderColor={c("_gray.3")}
+      {...props}
+    >
       <Container
-        maxW="container.xl"
+        maxW="8xl"
         position="relative"
-        h={14}
+        h={16}
         display="grid"
+        gridAutoFlow="column"
+        justifyContent="space-between"
         alignItems="center"
       >
         {/* Left-Aligned Content */}
-        <HStack position="absolute" left={0}>
+        <HStack>
           <LogoLink />
         </HStack>
         {/* Centered Content */}
-        <HStack></HStack>
+        <HStack
+          position="absolute"
+          left="50%"
+          transform={"translateX(-50%)"}
+        ></HStack>
         {/* Right-Aligned Content */}
-        <HStack position="absolute" right={0}>
+        <HStack>
           <IconButton
             aria-label="Toggle theme"
             variant="ghost"
-            icon={<Icon as={RiSunFill} />}
+            icon={<Icon as={colorMode === "light" ? RiMoonFill : RiSunFill} />}
             onClick={toggleColorMode}
           />
         </HStack>

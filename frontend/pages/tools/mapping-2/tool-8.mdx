@@ -1,0 +1,37 @@
+---
+title: Tool 8
+date: 2021-01-01
+---
+
+# Tool 8
+
+This is the tool 8, please see the code below.
+
+```tsx
+import { extendTheme } from '@chakra-ui/react'
+
+const breakpoints = {
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+
+const theme = extendTheme({ breakpoints, ... })
+```
+
+```ada
+type Day_type   is range    1 ..   31;
+type Month_type is range    1 ..   12;
+type Year_type  is range 1800 .. 2100;
+type Hours is mod 24;
+type Weekday is (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
+
+type Date is
+   record
+     Day   : Day_type;
+     Month : Month_type;
+     Year  : Year_type;
+   end record;
+```

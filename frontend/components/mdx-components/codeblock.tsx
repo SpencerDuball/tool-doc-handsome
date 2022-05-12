@@ -15,6 +15,7 @@ import {
   Icon,
   IconButtonProps,
   useClipboard,
+  LightMode,
 } from "@chakra-ui/react";
 import Highlight, { defaultProps, Language, Prism } from "prism-react-renderer";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
@@ -82,6 +83,7 @@ const CopyButton = (props: IconButtonProps & { code: string }) => {
       variant="ghost"
       onClick={onCopy}
       colorScheme="_grayDark"
+      _hover={{ bg: "_grayDark.5" }}
       {...props}
     />
   );
@@ -95,7 +97,7 @@ function CodeContainer(props: BoxProps) {
       padding="5"
       rounded="md"
       my="8"
-      bg="indigoDark.2"
+      bg="slateDark.3"
       overflow="hidden"
       {...rest}
     >
@@ -171,13 +173,15 @@ const CodeBlock = (props: BoxProps) => {
       className="component-code-block"
       {...props}
     >
-      <CopyButton
-        aria-label="Copy"
-        position="absolute"
-        code={highlightProps.codeString}
-        top={2}
-        right={2}
-      />
+      <LightMode>
+        <CopyButton
+          aria-label="Copy"
+          position="absolute"
+          code={highlightProps.codeString}
+          top={2}
+          right={2}
+        />
+      </LightMode>
       <Highlight
         {...defaultProps}
         code={highlightProps.codeString}
